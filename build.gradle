@@ -1,27 +1,65 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import org.ajoberstar.grgit.Grgit
 
 buildscript {
-    ext.kotlin_version = '1.2.41'
-    repositories {
-        google()
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0-alpha15'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+  apply from: "dependencies/versions.gradle"
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
+  addRepos(repositories)
+  dependencies {
+    classpath deps.android_gradle_plugin
+    classpath deps.kotlin.plugin
+    classpath deps.grgit
+  }
 }
 
 allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
+  def git = Grgit.open(currentDir: projectDir)
+  addGitVersion(git.describe(), git.tag.list().size())
+  addRepos(repositories)
 }
 
+subprojects {
+  def isModule = false
+  def isAppModule = isModule || it.name.equals("app")
+  def dataBindingModules = ["app"]
+  //使用dataBinding的模块
+  def enableDataBinding = dataBindingModules.contains(it.name)
+
+  apply plugin: isAppModule ? 'com.android.application' : 'com.android.library'
+
+  apply plugin: 'kotlin-android'
+  apply plugin: 'kotlin-kapt'
+  apply plugin: 'kotlin-android-extensions'
+
+  android {
+    compileSdkVersion build_versions.compile_sdk
+    defaultConfig {
+      if (isAppModule) applicationId "com.mrtan.test" //这里改成项目id
+      minSdkVersion build_versions.min_sdk
+      targetSdkVersion build_versions.target_sdk
+
+      versionCode build_versions.androidVersionCode
+      versionName build_versions.androidVersionName
+      testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+      multiDexEnabled true
+      vectorDrawables.useSupportLibrary = true //drawable支持
+    }
+
+    compileOptions {
+      sourceCompatibility JavaVersion.VERSION_1_8
+      targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    if (enableDataBinding) {
+      dataBinding {
+        enabled true
+      }
+    }
+  }
+
+  dependencies {
+    implementation deps.kotlin.stdlib
+  }
+}
 task clean(type: Delete) {
-    delete rootProject.buildDir
+  delete rootProject.buildDir
 }
