@@ -13,6 +13,8 @@
     <activity android:name=".MainActivity">
     </activity>
     <activity android:name=".ObserveActivity">
+    </activity>
+    <activity android:name=".VideoActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
 
