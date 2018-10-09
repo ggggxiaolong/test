@@ -8,6 +8,7 @@ buildscript {
     classpath deps.android_gradle_plugin
     classpath deps.kotlin.plugin
     classpath deps.grgit
+    classpath 'com.google.gms:google-services:4.0.1'
   }
 }
 
@@ -57,7 +58,7 @@ subprojects {
   }
 
   dependencies {
-    implementation deps.kotlin.stdlib
+    implementation deps.kotlin.stdlib.jdk
   }
 }
 task clean(type: Delete) {

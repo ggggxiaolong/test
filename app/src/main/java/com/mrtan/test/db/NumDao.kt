@@ -1,7 +1,11 @@
 package com.mrtan.test.db
 
-import android.arch.lifecycle.LiveData
-import android.arch.persistence.room.*
+import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Update
 import com.mrtan.test.db.Num.Companion.TABLE_NUM
 
 /**
@@ -17,5 +21,4 @@ interface NumDao {
 
   @Update
   fun update(num: Num)
-
 }

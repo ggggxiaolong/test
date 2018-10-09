@@ -1,5 +1,6 @@
 package com.mrtan.test
 
+import kotlinx.coroutines.experimental.GlobalScope
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
 
@@ -7,7 +8,7 @@ import kotlinx.coroutines.experimental.launch
  * Mrtan created at 2018/4/22.
  */
 fun main(args: Array<String>) {
-  launch { // launch new coroutine in background and continue
+  GlobalScope.launch { // launch new coroutine in background and continue
     delay(1000L) // non-blocking delay for 1 second (default time unit is ms)
     println("World!") // print after delay
   }

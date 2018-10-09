@@ -1,8 +1,8 @@
 package com.mrtan.test.db
 
-import android.arch.persistence.room.ColumnInfo
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.mrtan.test.db.Num.Companion.TABLE_NUM
 
 /**
@@ -11,8 +11,8 @@ import com.mrtan.test.db.Num.Companion.TABLE_NUM
 
 @Entity(tableName = TABLE_NUM)
 data class Num constructor(
-    @PrimaryKey @ColumnInfo(name = ID) val id: Int,
-    @ColumnInfo(name = VALUE) val value: Int
+  @PrimaryKey @ColumnInfo(name = ID) val id: Int,
+  @ColumnInfo(name = VALUE) val value: Int
 ) {
   companion object {
     const val TABLE_NUM = "num"

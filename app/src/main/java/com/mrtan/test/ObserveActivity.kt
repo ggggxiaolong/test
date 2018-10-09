@@ -1,13 +1,13 @@
 package com.mrtan.test
 
-import android.arch.lifecycle.Observer
-import android.arch.persistence.room.Room
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.room.Room
 import com.mrtan.test.db.AppDataBase
 import com.mrtan.test.db.Num
 import kotlinx.android.synthetic.main.activity_observe.*
-import kotlinx.coroutines.experimental.CommonPool
+import kotlinx.coroutines.experimental.GlobalScope
 import kotlinx.coroutines.experimental.launch
 
 /**
@@ -19,7 +19,7 @@ class ObserveActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_observe)
     val dataBase = Room.databaseBuilder(applicationContext, AppDataBase::class.java, "test").build()
-    launch(CommonPool) {
+    GlobalScope.launch {
       dataBase.numDao().insert(Num(1, 0))
     }
     dataBase.numDao().getNum(1).observe(this, Observer { num ->
@@ -28,7 +28,7 @@ class ObserveActivity : AppCompatActivity() {
     var value = 0
     add.setOnClickListener {
       value += 1
-      launch(CommonPool) {
+      GlobalScope.launch {
         dataBase.numDao().update(Num(1, value))
       }
     }
