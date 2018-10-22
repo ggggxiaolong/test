@@ -43,6 +43,7 @@ dependencies {
   implementation deps.androidx.core
   implementation deps.androidx.constraintLayout
   implementation deps.room.runtime
+  implementation deps.timber
   implementation deps.lifecycle.livedata
   implementation 'com.yanzhenjie:permission:2.0.0-rc12'
   implementation 'com.github.Cielsk:clearable-edittext:0.0.5'

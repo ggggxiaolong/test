@@ -7,8 +7,8 @@ import androidx.room.Room
 import com.mrtan.test.db.AppDataBase
 import com.mrtan.test.db.Num
 import kotlinx.android.synthetic.main.activity_observe.*
-import kotlinx.coroutines.experimental.GlobalScope
-import kotlinx.coroutines.experimental.launch
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 /**
  * Mrtan created at 2018/6/25.

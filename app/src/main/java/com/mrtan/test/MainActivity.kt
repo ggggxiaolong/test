@@ -2,16 +2,16 @@ package com.mrtan.test
 
 import android.os.Bundle
 import android.os.SystemClock
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.google.firebase.iid.FirebaseInstanceId
 import kotlinx.android.synthetic.main.activity_main.text
-import kotlinx.coroutines.experimental.Dispatchers.Main
-import kotlinx.coroutines.experimental.GlobalScope
-import kotlinx.coroutines.experimental.launch
-import kotlinx.coroutines.experimental.withContext
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
   val message = MutableLiveData<String>()
@@ -35,9 +35,9 @@ class MainActivity : AppCompatActivity() {
     try {
       val token = FirebaseInstanceId.getInstance()
         .getToken("freemrtan@gmai.com", "android")
-      Log.i("Token", token)
+      Timber.i("Token %s", token)
     } catch (t: Throwable){
-      Log.e("Token", "creash", t)
+      Timber.e(t)
     }
   }
 }
