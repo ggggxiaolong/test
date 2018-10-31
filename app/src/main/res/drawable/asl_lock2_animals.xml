@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+  <aapt:attr name="android:drawable">
+    <vector
+        android:name="vector"
+        android:width="153dp"
+        android:height="58dp"
+        android:viewportWidth="153"
+        android:viewportHeight="58">
+      <group android:name="group">
+        <path
+            android:name="T"
+            android:pathData="M 15 36.6 L 15 13.9 L 4 13.9 L 4 5 L 35 5 L 35 13.9 L 24.2 13.9
+            L 24.2 36.6 C 24.2 39.2 22 41 19.5 41 C 17 41 15.1 39 15 36.6 Z"
+            android:fillColor="#00000000"
+            android:strokeColor="#006666"
+            android:strokeWidth="1"/>
+        <path
+            android:name="A"
+            android:pathData="M 57.7 39.5 L 53.5 39.5 C 43.8 39.5 36 31.8 36 22.2 C 36 12.6 43.8 5 53.5 5
+            C 63.2 5 71 12.7 71 22.3 L 71 37.2 C 70.8 39.4 68.9 41.1 66.5 41.1
+            C 64.2 41.1 62.5 39.5 62.2 37.3 L 62 22.6 L 62 21.7 C 62 21.4 61.9 21.1 61.9 20.8
+            C 61.8 20.1 61.6 19.4 61.3 18.8 C 61.3 18.8 61.3 18.7 61.2 18.7
+            C 61 18.4 60.9 18.1 60.7 17.7 C 60.3 17.1 59.9 16.7 59.5 16.3
+            C 58 14.8 55.8 13.9 53.5 13.9 C 48.8 13.9 45 17.7 45 22.3
+            C 45 26.9 48.8 30.7 53.5 30.7 L 57.7 30.7 L 57.7 39.5 Z"
+            android:fillColor="#00000000"
+            android:strokeColor="#006666"
+            android:strokeWidth="1"/>
+        <path
+            android:name="P1"
+            android:pathData="M 89.3 39.6 C 91.5 39.8 92.9 39.9 93.5 39.9 C 103.2 39.9 111 32.1 111 22.5
+            C 111 12.9 103.2 5 93.5 5 C 83.8 5 76 12.8 76 22.4 L 76 51.1
+            C 76.2 53.4 78.1 55 80.5 55 C 83 55 84.7 53.2 84.7 50.8 L 84.7 39.2 L 84.9 22.7
+            L 84.9 21.8 C 84.9 21.5 85 21.2 85 20.9 C 85.1 20.2 85.3 19.5 85.6 18.9
+            C 85.6 18.9 85.6 18.8 85.7 18.8 C 85.9 18.5 86 18.1 86.2 17.8
+            C 86.6 17.2 87 16.8 87.4 16.4 C 88.9 14.9 91.1 14 93.4 14
+            C 98.1 14 101.9 17.8 101.9 22.5 C 101.9 27.2 98.1 31 93.4 31
+            L 89.2 31 L 89.2 39.6 L 89.3 39.6 Z"
+            android:fillColor="#00000000"
+            android:strokeColor="#006666"
+            android:strokeWidth="1"/>
+        <path
+            android:name="P2"
+            android:pathData="M 127.3 39.6 C 129.5 39.8 130.9 39.9 131.5 39.9
+            C 141.2 39.9 149 32.1 149 22.5 C 149 12.9 141.2 5 131.5 5 C 121.8 5 114 12.8 114 22.4
+            L 114 51.1 C 114.2 53.4 116.1 55 118.5 55 C 121 55 122.7 53.2 122.7 50.8 L 122.7 39.2
+            L 122.9 22.7 L 122.9 21.8 C 122.9 21.5 123 21.2 123 20.9
+            C 123.1 20.2 123.3 19.5 123.6 18.9 C 123.6 18.9 123.6 18.8 123.7 18.8
+            C 123.9 18.5 124 18.1 124.2 17.8 C 124.6 17.2 125 16.8 125.4 16.4
+            C 126.9 14.9 129.1 14 131.4 14 C 136.1 14 139.9 17.8 139.9 22.5
+            C 139.9 27.2 136.1 31 131.4 31 L 127.2 31 L 127.2 39.6 L 127.3 39.6 Z"
+            android:fillColor="#00000000"
+            android:strokeColor="#006666"
+            android:strokeWidth="1"/>
+      </group>
+    </vector>
+  </aapt:attr>
+  <target android:name="T">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:propertyName="trimPathEnd"
+            android:duration="2000"
+            android:valueFrom="0"
+            android:repeatCount="-1"
+            android:valueTo="1"
+            android:valueType="floatType"
+            android:interpolator="@interpolator/lock2"/>
+        <!--<objectAnimator
+            android:propertyName="trimPathEnd"
+            android:startOffset="1100"
+            android:duration="2000"
+            android:valueFrom="1"
+            android:valueTo="0"
+            android:valueType="floatType"
+            android:interpolator="@android:anim/cycle_interpolator"/>-->
+      </set>
+    </aapt:attr>
+  </target>
+  <target android:name="A">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:propertyName="trimPathEnd"
+            android:duration="2000"
+            android:valueFrom="0"
+            android:valueTo="1"
+            android:repeatCount="-1"
+            android:valueType="floatType"
+            android:interpolator="@interpolator/lock2"/>
+        <!--<objectAnimator
+            android:propertyName="trimPathEnd"
+            android:startOffset="1100"
+            android:duration="2000"
+            android:valueFrom="1"
+            android:valueTo="0"
+            android:valueType="floatType"
+            android:interpolator="@android:anim/cycle_interpolator"/>-->
+      </set>
+    </aapt:attr>
+  </target>
+  <target android:name="P1">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:propertyName="trimPathEnd"
+            android:duration="2000"
+            android:valueFrom="0"
+            android:valueTo="1"
+            android:repeatCount="-1"
+            android:valueType="floatType"
+            android:interpolator="@interpolator/lock2"/>
+        <!--<objectAnimator
+            android:propertyName="trimPathEnd"
+            android:startOffset="1100"
+            android:duration="2000"
+            android:valueFrom="1"
+            android:valueTo="0"
+            android:valueType="floatType"
+            android:interpolator="@android:anim/cycle_interpolator"/>-->
+      </set>
+    </aapt:attr>
+  </target>
+  <target android:name="P2">
+    <aapt:attr name="android:animation">
+      <set>
+        <objectAnimator
+            android:propertyName="trimPathEnd"
+            android:duration="2000"
+            android:valueFrom="0"
+            android:valueTo="1"
+            android:repeatCount="-1"
+            android:valueType="floatType"
+            android:interpolator="@interpolator/lock2"/>
+        <!--<objectAnimator
+            android:propertyName="trimPathEnd"
+            android:startOffset="1100"
+            android:duration="2000"
+            android:valueFrom="1"
+            android:valueTo="0"
+            android:valueType="floatType"
+            android:interpolator="@android:anim/cycle_interpolator"/>-->
+      </set>
+    </aapt:attr>
+  </target>
+</animated-vector>
