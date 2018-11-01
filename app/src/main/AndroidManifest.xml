@@ -9,20 +9,15 @@
   <uses-permission android:name="android.permission.INTERNET"/>
 
   <application
+      android:name=".App"
       android:allowBackup="true"
       android:icon="@mipmap/ic_launcher"
       android:label="@string/app_name"
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
-      android:name=".App"
       android:theme="@style/AppTheme"
       tools:ignore="GoogleAppIndexingWarning">
     <activity android:name=".MainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-
-        <category android:name="android.intent.category.LAUNCHER"/>
-      </intent-filter>
     </activity>
     <activity android:name=".ObserveActivity">
     </activity>
@@ -32,10 +27,16 @@
     <activity android:name=".LocationActivity">
 
     </activity>
+    <activity android:name=".DialogActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
 
     <service android:name=".firebase.CloudMessageService">
       <intent-filter>
-        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+        <action android:name="com.google.firebase.MESSAGING_EVENT"/>
       </intent-filter>
     </service>
     <!--<meta-data
@@ -43,10 +44,10 @@
         android:resource="@mipmap/ic_launcher" />-->
     <meta-data
         android:name="com.google.firebase.messaging.default_notification_color"
-        android:resource="@color/colorAccent" />
+        android:resource="@color/colorAccent"/>
     <meta-data
         android:name="com.google.firebase.messaging.default_notification_channel_id"
-        android:value="@string/default_notification_channel_id" />
+        android:value="@string/default_notification_channel_id"/>
   </application>
 
 </manifest>

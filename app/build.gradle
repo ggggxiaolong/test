@@ -42,9 +42,11 @@ dependencies {
   implementation deps.androidx.appCompat
   implementation deps.androidx.core
   implementation deps.androidx.constraintLayout
+  implementation deps.materialDialogs.core
   implementation deps.room.runtime
   implementation deps.timber
   implementation deps.lifecycle.livedata
+  implementation deps.androidUtils
   implementation 'com.yanzhenjie:permission:2.0.0-rc12'
   implementation 'com.github.Cielsk:clearable-edittext:0.0.5'
   implementation 'com.google.firebase:firebase-core:16.0.4'
@@ -58,8 +60,3 @@ dependencies {
   androidTestImplementation deps.mockito.core
 }
 apply plugin: 'com.google.gms.google-services'
-kotlin {
-  experimental {
-    coroutines "enable"
-  }
-}
