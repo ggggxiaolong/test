@@ -1,4 +1,4 @@
-import org.ajoberstar.grgit.Grgit
+//import org.ajoberstar.grgit.Grgit
 
 buildscript {
   apply from: "dependencies/versions.gradle"
@@ -7,14 +7,14 @@ buildscript {
   dependencies {
     classpath deps.android_gradle_plugin
     classpath deps.kotlin.plugin
-    classpath deps.grgit
+//    classpath deps.grgit
     classpath 'com.google.gms:google-services:4.0.1'
   }
 }
 
 allprojects {
-  def git = Grgit.open(currentDir: projectDir)
-  addGitVersion(git.describe(), git.tag.list().size())
+//  def git = Grgit.open(currentDir: projectDir)
+  addGitVersion("1.1", 2)
   addRepos(repositories)
 }
 
