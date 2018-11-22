@@ -7,6 +7,7 @@ buildscript {
   dependencies {
     classpath deps.android_gradle_plugin
     classpath deps.kotlin.plugin
+    classpath deps.kotlin.serializationPlugin
 //    classpath deps.grgit
     classpath 'com.google.gms:google-services:4.0.1'
   }
