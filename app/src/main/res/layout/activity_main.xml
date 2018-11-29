@@ -33,5 +33,12 @@
       app:srcCompat="@drawable/solar"
       tools:ignore="ContentDescription"
       />
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      android:background="@drawable/bg_corner_dot_selector"
+      android:clickable="true"
+      android:focusable="true"
+      />
 
 </LinearLayout>
