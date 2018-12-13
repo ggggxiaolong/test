@@ -40,5 +40,15 @@
       android:clickable="true"
       android:focusable="true"
       />
+  <com.google.android.material.button.MaterialButton
+      android:layout_width="match_parent"
+      android:layout_height="48dp"
+      android:text="@string/app_name"
+      style="@style/Widget.MaterialComponents.Button.TextButton"
+      app:icon="@drawable/solar"
+      app:iconSize="24dp"
+      app:iconGravity="textStart"
+      app:iconPadding="8dp"
+      />
 
 </LinearLayout>
