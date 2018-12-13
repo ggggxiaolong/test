@@ -5,7 +5,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
 import android.util.Log
-import com.google.firebase.FirebaseApp
+//import com.google.firebase.FirebaseApp
 import com.maning.librarycrashmonitor.MCrashMonitor
 import com.maning.librarycrashmonitor.listener.MCrashCallBack
 import java.io.File
