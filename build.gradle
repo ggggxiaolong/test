@@ -11,6 +11,9 @@ buildscript {
 //    classpath deps.grgit
     classpath 'com.google.gms:google-services:4.0.1'
   }
+  repositories {
+    google()
+  }
 }
 
 allprojects {

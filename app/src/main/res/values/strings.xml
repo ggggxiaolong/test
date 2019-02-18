@@ -2,4 +2,6 @@
   <string name="app_name">Test</string>
   <string name="default_notification_channel_id">Cloud_Message</string>
   <string name="default_notification_channel_name">Cloud Message</string>
+  <string name="format_01">%1$s open %2$s</string>
+  <string name="format_02">%2$s open %1$s</string>
 </resources>

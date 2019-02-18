@@ -56,7 +56,9 @@ dependencies {
   implementation 'com.google.firebase:firebase-messaging:17.3.3'
   implementation 'com.github.maning0303:MNCrashMonitor:V1.0.9'
   implementation 'com.github.Cielsk:clearable-edittext:0.0.5'
+  implementation 'com.github.instacart.truetime-android:library:3.4'
   testImplementation 'com.google.api-client:google-api-client:1.25.0'
+  implementation deps.customView.circleImageView
   implementation deps.kotlin.serialization.jdk
   kapt deps.room.compiler
   testImplementation deps.junit
