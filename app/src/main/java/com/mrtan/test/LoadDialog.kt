@@ -15,9 +15,9 @@ class LoadDialog(context: Context) : AlertDialog(context) {
     val view = LayoutInflater.from(context).inflate(R.layout.dialog_loading, null)
     (view.findViewById<ImageView>(R.id.progress).drawable as Animatable).start()
     setContentView(view)
-    val p = window.attributes
+    val p = window!!.attributes
     p.width = ConvertUtils.dp2px(140f)
-    window.attributes = p
+    window!!.attributes = p
   }
 
 }

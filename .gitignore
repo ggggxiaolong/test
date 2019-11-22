@@ -5,6 +5,7 @@
 .DS_Store
 /build
 /captures
+*/.cxx
 .externalNativeBuild
 gradlew
 gradlew.bat

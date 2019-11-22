@@ -8,7 +8,7 @@ import android.location.LocationManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.yanzhenjie.permission.AndPermission
-import com.yanzhenjie.permission.Permission
+import com.yanzhenjie.permission.runtime.Permission
 import kotlinx.android.synthetic.main.activity_main.*
 
 class LocationActivity : AppCompatActivity() {

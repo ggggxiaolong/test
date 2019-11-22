@@ -1,25 +1,27 @@
-//import org.ajoberstar.grgit.Grgit
-
 buildscript {
   apply from: "dependencies/versions.gradle"
 
   addRepos(repositories)
   dependencies {
-    classpath deps.android_gradle_plugin
-    classpath deps.kotlin.plugin
-    classpath deps.kotlin.serializationPlugin
-//    classpath deps.grgit
+    classpath deps.plugin.androidGradle
+    classpath deps.plugin.kotlin
+    classpath deps.plugin.kotlinSerialization
+    //    classpath deps.grgit
     classpath 'com.google.gms:google-services:4.0.1'
-  }
-  repositories {
-    google()
+    classpath deps.plugin.gradleBinary
+    classpath deps.plugin.androidMaven
   }
 }
 
 allprojects {
-//  def git = Grgit.open(currentDir: projectDir)
-  addGitVersion("1.1", 2)
+  //  def git = Grgit.open(currentDir: projectDir)
+  addGitVersion(gitVersionTag(), gitVersionCode())
   addRepos(repositories)
+  tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+  }
 }
 
 subprojects {
@@ -29,6 +31,7 @@ subprojects {
   //使用dataBinding的模块
   def enableDataBinding = dataBindingModules.contains(it.name)
 
+  //  apply plugin: 'cipher.so'
   apply plugin: isAppModule ? 'com.android.application' : 'com.android.library'
 
   apply plugin: 'kotlin-android'
@@ -47,6 +50,9 @@ subprojects {
       testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
       multiDexEnabled true
       vectorDrawables.useSupportLibrary = true //drawable支持
+      ndk {
+        abiFilters 'armeabi-v7a'
+      }
     }
 
     compileOptions {
@@ -64,6 +70,24 @@ subprojects {
   dependencies {
     implementation deps.kotlin.stdlib.jdk
   }
+}
+
+def gitVersionCode() {
+  def out = new ByteArrayOutputStream()
+  exec {
+    commandLine 'git', 'rev-list', 'HEAD', '--count'
+    standardOutput = out
+  }
+  return out.toString().toInteger()
+}
+
+def gitVersionTag() {
+  def out = new ByteArrayOutputStream()
+  exec {
+    commandLine 'git', 'describe', '--tags'
+    standardOutput = out
+  }
+  return out.toString().trim()
 }
 task clean(type: Delete) {
   delete rootProject.buildDir

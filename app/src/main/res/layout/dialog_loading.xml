@@ -13,6 +13,6 @@
       android:contentDescription="@null"
       android:scaleType="fitCenter"
       android:layout_gravity="center"
-      app:srcCompat="@drawable/asl_lock_animals"
+      app:srcCompat="@drawable/ic_svg_loading"
       />
 </FrameLayout>

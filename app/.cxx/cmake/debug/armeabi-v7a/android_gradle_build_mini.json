@@ -1,0 +1,17 @@
+{
+  "buildFiles": [
+    "/server/project/Test/app/build/cipher.so/cmake/CMakeLists.txt",
+    "/server/project/Test/app/build/cipher.so/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/server/reponsitory/SDK/cmake/3.6.4111459/bin/cmake --build /server/project/Test/app/.cxx/cmake/debug/armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "cipher-lib-Debug-armeabi-v7a": {
+      "artifactName": "cipher-lib",
+      "buildCommand": "/server/reponsitory/SDK/cmake/3.6.4111459/bin/cmake --build /server/project/Test/app/.cxx/cmake/debug/armeabi-v7a --target cipher-lib",
+      "abi": "armeabi-v7a",
+      "output": "/server/project/Test/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libcipher-lib.so"
+    }
+  }
+}

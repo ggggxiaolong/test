@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+
+  implementation 'androidx.annotation:annotation:1.1.0'
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation deps.kotlin.coroutines.jdk
   implementation deps.kotlin.coroutines.android
@@ -49,20 +51,33 @@ dependencies {
   implementation deps.timber
   implementation deps.lifecycle.livedata
   implementation deps.androidUtils
-  implementation 'com.yanzhenjie:permission:2.0.0-rc12'
   implementation 'com.github.Cielsk:clearable-edittext:0.0.5'
-  implementation 'com.google.firebase:firebase-core:16.0.4'
-  implementation 'com.google.firebase:firebase-iid:17.0.3'
-  implementation 'com.google.firebase:firebase-messaging:17.3.3'
+  implementation deps.firebaseId
+  implementation deps.firebaseMessage
   implementation 'com.github.maning0303:MNCrashMonitor:V1.0.9'
   implementation 'com.github.Cielsk:clearable-edittext:0.0.5'
   implementation 'com.github.instacart.truetime-android:library:3.4'
   testImplementation 'com.google.api-client:google-api-client:1.25.0'
   implementation deps.customView.circleImageView
+  implementation deps.permission
   implementation deps.kotlin.serialization.jdk
+  implementation deps.okhttp3.runtime
+  implementation deps.anko.sdk25
+  implementation deps.anko.v7
   kapt deps.room.compiler
   testImplementation deps.junit
   androidTestImplementation deps.androidx.test.runner
   androidTestImplementation deps.mockito.core
 }
+//cipher.so {
+//  keys {
+//    hello {
+//      value = 'Hello From Cipher.so😊'
+//    }
+//    数据库密码 {
+//      value = '今天天气不错😂😂'
+//    }
+//  }
+//  encryptSeed = 'HelloSe1cretKey'
+//}
 apply plugin: 'com.google.gms.google-services'
