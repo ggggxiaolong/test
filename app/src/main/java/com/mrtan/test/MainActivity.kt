@@ -1,14 +1,13 @@
 package com.mrtan.test
 
 //import net.idik.lib.cipher.so.CipherClient
-import android.Manifest
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.Animatable
 import android.os.Bundle
-import android.os.Environment
 import android.text.Html
 import android.text.SpannableString
 import android.text.method.LinkMovementMethod
@@ -16,15 +15,14 @@ import android.view.animation.LinearInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.blankj.utilcode.util.ToastUtils
-import com.google.firebase.iid.FirebaseInstanceId
-import com.yanzhenjie.permission.AndPermission
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.ExistingWorkPolicy
+import androidx.work.PeriodicWorkRequest
+import androidx.work.WorkManager
+import com.mrtan.test.ui.CameraActivity
+import com.mrtan.test.work.UpdateWork
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.*
-import timber.log.Timber
-import java.io.File
-import java.lang.Runnable
-import java.security.Permission
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,18 +35,15 @@ class MainActivity : AppCompatActivity() {
     message.observe(this, Observer {
       text.text = it ?: "loading"
     })
-    Thread(Runnable { getToken() }).start()
     button.setOnClickListener {
     }
     imageView.setImageDrawable(
       TextDrawable.builder().buildRound("A", Color.RED)
     )
-    val spannableString = SpannableString("Click here for more.")
-//    val url = "https://developer.android.com"
-//    spannableString.setSpan(URLSpan (url), 0, spannableString.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-//    text.text = spannableString
+    val progressReq = PeriodicWorkRequest.Builder(UpdateWork::class.java, 15 , TimeUnit.MINUTES).addTag("progress").build();
+    WorkManager.getInstance(this).enqueueUniquePeriodicWork("update", ExistingPeriodicWorkPolicy.KEEP, progressReq)
     ObjectAnimator.ofFloat(loadView, "rotation", 0f, 360f).apply {
-      duration =1000
+      duration = 1000
       repeatMode = ValueAnimator.RESTART
       interpolator = LinearInterpolator()
       repeatCount = -1
@@ -58,43 +53,11 @@ class MainActivity : AppCompatActivity() {
     text.movementMethod = LinkMovementMethod.getInstance()
     (button.icon as Animatable).start()
     download.setOnClickListener {
-//      progress.max = 100
-//      progress.progress = 0
-//      AndPermission.with(this)
-//        .runtime()
-//        .permission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//        .onGranted {
-//          GlobalScope.launch {
-//            downloadFile("https://publicobject.com/helloworld.txt", object : DownloadCallback {
-//              override fun onProgress(p: Int) {
-//                runOnUiThread{
-//                  progress.progress = p
-//                }
-//              }
-//
-//              override fun onSuccess(file: File) {
-//                ToastUtils.showShort("download success")
-//              }
-//
-//              override fun onFail(error: Int) {
-//                ToastUtils.showShort("download fail $error")
-//              }
-//
-//            }, File(Environment.getExternalStoragePublicDirectory(
-//              Environment.DIRECTORY_DOWNLOADS
-//            ), "okhttp.txt"))
-//          }
-//        }.start()
+      startActivity(Intent(this, CameraActivity::class.java))
     }
+    WorkManager.getInstance(this).getWorkInfoByIdLiveData(progressReq.id).observe(this, Observer { info ->
+      progress.progress = info.progress.getInt("progress", 0)
+    })
   }
 
-  private fun getToken() {
-    try {
-      val token = FirebaseInstanceId.getInstance()
-        .getToken("freemrtan@gmai.com", "android")
-      Timber.i("Token %s", token)
-    } catch (t: Throwable) {
-      Timber.e(t)
-    }
-  }
 }

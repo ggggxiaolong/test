@@ -9,132 +9,137 @@
     tools:context=".MainActivity"
     >
 
-  <TextView
-      android:id="@+id/text"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Hello World!"
-      />
-  <TextView
-      android:id="@+id/watcher"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      />
-  <EditText
-      android:layout_width="match_parent"
-      android:layout_height="50dp"
-      />
-  <ImageView
-      android:id="@+id/loadView"
-      android:layout_width="100dp"
-      android:layout_height="100dp"
-      android:layout_gravity="center_horizontal"
-      android:clickable="true"
-      app:srcCompat="@drawable/asl_lock_connect"
-      tools:ignore="ContentDescription"
-      />
-  <View
-      android:layout_width="match_parent"
-      android:layout_height="100dp"
-      android:background="@drawable/bg_corner_dot_selector"
-      android:clickable="true"
-      android:focusable="true"
-      />
-  <com.google.android.material.button.MaterialButton
-      android:id="@+id/button"
-      style="@style/Widget.MaterialComponents.Button.TextButton"
-      android:layout_width="match_parent"
-      android:layout_height="48dp"
-      android:background="@drawable/bg_gradient_orange_corner"
-      android:text="@string/app_name"
-      app:icon="@drawable/asl_lock_connect"
-      app:iconGravity="textStart"
-      app:iconPadding="8dp"
-      app:iconSize="24dp"
-      />
-  <com.google.android.material.button.MaterialButton
-      android:id="@+id/web"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="web"
-      />
-  <de.hdodenhof.circleimageview.CircleImageView
-      android:id="@+id/imageView"
-      android:layout_width="64dp"
-      android:layout_height="64dp"
-      android:layout_gravity="center_horizontal"
-      />
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        />
+
+    <ImageView
+        android:id="@+id/loadView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/asl_lock_connect"
+        tools:ignore="ContentDescription"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/bg_corner_dot_selector"
+        android:clickable="true"
+        android:focusable="true"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_gradient_orange_corner"
+        android:text="@string/app_name"
+        app:icon="@drawable/asl_lock_connect"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:iconSize="24dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="web"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center_horizontal"
+        />
+
     <com.google.android.material.chip.ChipGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:singleSelection="false"
-        app:chipSpacingVertical="0dp"
         app:chipSpacingHorizontal="16dp"
+        app:chipSpacingVertical="0dp"
         app:singleLine="true"
+        app:singleSelection="false"
         >
-      <com.google.android.material.chip.Chip
-          style="@style/Widget.MaterialComponents.Chip.Entry"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:checkable="false"
-          android:text="409551382@qq.com"
-          />
-      <com.google.android.material.chip.Chip
-          style="@style/Widget.MaterialComponents.Chip.Choice"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:backgroundTint="#fff8ec"
-          android:text="3234545ty@qq.com"
-          />
-      <com.google.android.material.chip.Chip
-          style="@style/Widget.MaterialComponents.Chip.Filter"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="19xlhfheo_leld@qq.com"
-          />
-      <com.google.android.material.chip.Chip
-          style="@style/Widget.MaterialComponents.Chip.Filter"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="19xlhfheo_leld@qq.com"
-          />
-      <com.google.android.material.chip.Chip
-          style="@style/Widget.MaterialComponents.Chip.Filter"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="19xlhfheo_leld@qq.com"
-          />
-      <com.google.android.material.chip.Chip
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="19xlhfheo_leld@qq.com"
-          app:chipCornerRadius="6dp"
-          android:background="#f6f6f6"
-          android:textColor="#9b9b9b"
-          />
-      <com.google.android.material.chip.Chip
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="19xlhfheo_leld@qq.com"
-          />
-      <com.google.android.material.chip.Chip
-          style="@style/Widget.MaterialComponents.Chip.Entry"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="19xlhfheo_leld@qq.com"
-          />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="false"
+            android:text="409551382@qq.com"
+            />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#fff8ec"
+            android:text="3234545ty@qq.com"
+            />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19xlhfheo_leld@qq.com"
+            />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19xlhfheo_leld@qq.com"
+            />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19xlhfheo_leld@qq.com"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#f6f6f6"
+            android:text="19xlhfheo_leld@qq.com"
+            android:textColor="#9b9b9b"
+            app:chipCornerRadius="6dp"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19xlhfheo_leld@qq.com"
+            />
+
+        <com.google.android.material.chip.Chip
+            style="@style/Widget.MaterialComponents.Chip.Entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19xlhfheo_leld@qq.com"
+            />
     </com.google.android.material.chip.ChipGroup>
-  <androidx.appcompat.widget.AppCompatButton
-      android:id="@+id/download"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="下载"
-    />
-  <ProgressBar
-      android:id="@+id/progress"
-      android:layout_width="match_parent"
-      android:layout_height="4dp"
-      style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-    />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CameraX"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        />
 </LinearLayout>
